@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="th">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>UFA169</title>
+    <style>
+        /* นี่คือส่วนของ CSS ที่ใช้ตกแต่ง */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #CC9966; /* สีพื้นหลังเทาอ่อน */
+            color: #333; /* สีตัวอักษรเทาเข้ม */
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px; /* ขอบมน */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* เงาจางๆ */
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db; /* เส้นใต้หัวข้อสีฟ้า */
+            display: inline-block;
+        }
+        .skill-list {
+            background: #e1f5fe;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline; /* ขีดเส้นใต้เมื่อเอาเมาส์ไปชี้ */
+        }
+<button id="magicButton" style="padding: 10px 20px; cursor: pointer; background: #3498db; color: white; border: none; border-radius: 5px; margin-top: 10px;">
+    คลิกเพื่อเปลี่ยนสีนำโชค!
+</button>
+    </style>
+</head>
+<body><button id="magicButton" style="padding: 10px 20px; cursor: pointer; background: #3498db; color: white; border: none; border-radius: 5px; margin-top: 10px;">
+    คลิกเพื่อเปลี่ยนสีนำโชค!
+</button>
+
+    <div class="container"><div class="interactive-box" style="margin-top: 30px; padding: 20px; border: 2px dashed #3498db; border-radius: 10px;">
+    <h3>ระบบทักทายอัจฉริยะ</h3>
+    
+    <label for="userName">พิมพ์ชื่อของคุณตรงนี้:</label><br>
+    <input type="text" id="userName" placeholder="ใส่ชื่อเล่น..." style="padding: 10px; width: 70%; margin-top: 10px;">
+    
+    <button onclick="sayHello()" style="padding: 10px 15px; background: #2ecc71; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        ทักทายฉันหน่อย!
+    </button>
+
+    <h2 id="greetingOutput" style="color: #e67e22; margin-top: 20px;"></h2>
+</div>
+
+<script>
+    function sayHello() {
+        // 1. ดึงค่าจากช่อง Input มาเก็บไว้ในตัวแปร name
+        const name = document.getElementById('userName').value;
+        const output = document.getElementById('greetingOutput');
+
+        // 2. ตรวจสอบว่าพิมพ์ชื่อหรือยัง
+        if (name === "") {
+            output.innerText = "โธ่... พิมพ์ชื่อให้ผมก่อนสิครับ!";
+            output.style.color = "red";
+        } else {
+            // 3. แสดงผลคำทักทาย
+            output.innerText = "ยินดีที่ได้รู้จักนะคุณ " + name + " ! ขอให้เป็นวันที่ดีในการเขียนโค้ดครับ";
+            output.style.color = "#2ecc71";
+        }
+    }
+</script>
+        <header>
+            <h1>คาสิโนออนไลน์ [ UFA169 ] </h1>
+            <p>ยินดีต้อนรับสู่โลกของการเขียนเว็บของผม</p>
+        </header>
+
+        <section>
+            <h2>เกี่ยวกับฉัน</h2>
+            <p>ตอนนี้ผมกำลังหัดเขียน <b>HTML & CSS</b> และตั้งใจจะเป็น Web Developer ครับ</p>
+            
+            <div class="skill-list">
+                <h3>ทักษะของผม</h3>
+                <ul>
+                    <li>HTML5 (Structure)</li>
+                    <li>CSS3 (Design)</li>
+                    <li>Learning Mindset</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>ผลงาน</h2>
+            <p>ดูโปรเจกต์ของผมเพิ่มเติมได้ที่ <a href="#">GitHub ของฉัน</a></p>
+        </section>
+
+        <footer>
+            <p style="text-align: center; color: #888; font-size: 0.8em; margin-top: 30px;">
+                © 2026 สร้างด้วยความภูมิใจโดย [ชื่อของคุณ]
+            </p>
+        </footer>
+    </div>
+<script>
+    const btn = document.getElementById('magicButton');
+
+    btn.addEventListener('click', function() {
+        // สุ่มสีแบบ Hex Code
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        
+        // สั่งให้พื้นหลังเปลี่ยนสี
+        document.body.style.backgroundColor = randomColor;
+        
+        // แจ้งเตือนเบาๆ
+        console.log("เปลี่ยนเป็นสี: " + randomColor);
+    });
+</script>
+</body>
+</html>
